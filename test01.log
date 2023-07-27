@@ -1,0 +1,13 @@
+ERRORS:
+
+Labels in the asm file:
+var1 used at program counter 7
+next used at program counter 5
+label used at program counter 0
+loop used at program counter 3
+
+Warning:
+Unused labels:
+var1
+next
+label

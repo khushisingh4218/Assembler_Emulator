@@ -1,0 +1,12 @@
+ERRORS:
+
+Labels in the asm file:
+memory used at program counter 6
+var1 used at program counter 0
+var2 used at program counter 1
+
+Warning:
+Unused labels:
+memory
+var1
+var2

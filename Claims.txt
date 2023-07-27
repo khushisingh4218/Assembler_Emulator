@@ -1,0 +1,137 @@
+/*****************************************************************************
+TITLE: Claims																																
+AUTHOR: 2101CS37 KHUSHI SINGH
+Declaration of Authorship
+This txt file, claims.txt, is part of the miniproject of CS209/CS210 at the 
+department of Computer Science and Engg, IIT Patna . 
+*****************************************************************************/
+
+Files:
+==========
+*All the files i submitted, asm.c and emu.c and claims.txt, have my name and student id at the start, along with a declaration of authorship.
+
+The evidence for Assembler including the output files from the given test examples has also been uploaded. They are test01(3 output files), test02(3 output files), algo1
+(3 output files),algo2(3 output files) and triangle(3 output files). All the test files have been tested and work properly.
+ As for the evidence for the emulator is uploaded with two output files, memcpy.txt and triangle.txt.
+
+*Both of my c programs did not show any errors and warnings when i compiled it with
+gcc -std=c89 -pedantic and gcc -std=c89 -pedantic -W -Wall -Wpointer-arith -Wwrite-strings -Wstrict-prototypes standard  or equilvalent ....or gcc ... or g++
+
+*Two programs are compilable with gcc asm.c -o asm and gcc emu.c -o emu.
+
+
+=============================
+Program format and structure:
+=============================
+1. The assembler:
+
+    * with one data structure to store mnemonic, its opcode and operand.
+    * with a vector of mnemonics.
+    * uses a single routine for both passes.
+    * detects label errors.
+    * consistent and sensible formatting with sensible program structure. 
+    * sensible variable, function & type names with explanatory comments.
+		* advanced listing file.
+		* assembles test programs.
+	  * can implements and demonstrates the instruction SET.
+
+2. The emulator ( if you are submitting) :
+
+		* with three data structures to store respectively memory, mnemonic table with expected operands
+		  and a linked list structure word.
+    * loads object file, 
+    * by giving the instructions like "-before/-after" , the program can produce memory dump before/after execution.
+    * by giving the instruction like "-trace", the program prints the result of program executed.
+    * detects errant programs.
+
+
+=============================
+Testing:
+=============================
+
+1. The assembler:
+
+I have tested the examples which were given in mini-project instruction document. The errors only occurred in the file test2.asm and 
+the program immediately stopped on the second pass. 
+
+The others were tested without any errors detected and produced three output files, listing file, error log file and machine readable object file, for each example. 
+
+After comparing the listing files and object file of algo1.asm, algo2.asm, test01.asm, test02.asm, test03.asm, memcpy.asm, triangle.asm
+with the implemented result given on the assignment, both of them show no difference from those provided( if there is different  that is fine too).
+ 
+
+1)
+#Input: asm test01.asm
+#Output: 
+a. test01.list 
+b. test01.log (without any error messages)
+c. test01.obj
+
+2)
+#Input:asm test2.asm
+#Output: 
+a. test02.list 
+b. test02.log (without error messages shown as below but also in log file)
+c. test02.obj
+
+error messages:
+ERROR at line 4: Duplicate label!
+ERROR at line 7:ldc requires one && only one operand.
+ERROR at line 8:add requires no operand.
+ERROR at line 9:ldc requires one && only one operand.
+ERROR at Line 10:Bogus label name! Label should be alphanumeric only && should not begin with a digit.
+ERROR at line 11: Bogus mnemonic
+ERROR at line 12: Bogus mnemonic
+ERROR: label: is undefined!
+ERROR:Invalid format of number. Use prefix '0x' for hex and '0' for octal.
+ERROR:Invalid format of number. Use prefix '0x' for hex and '0' for octal.
+ERROR: fibble is undefined!
+
+3)
+#Input:asm algo1.asm
+#Output: 
+a. algo1.list
+b. algo1.log (without any error messages)
+c. algo1.obj
+
+
+4)
+#Input:asm memcpy.asm
+#Output: 
+a. memcpy.l 
+b. memcpy.log (without any error messages)
+c. memcpy.o
+
+5)
+#Input:asm algo2.asm
+#Output: 
+a. algo2.list 
+b. algo2.log (without any error messages)
+c. algo2.obj
+
+
+
+2. The emulator:
+
+I have tested three examples shown as below. The errors only occurred in the file test3.o and 
+the program immediately stopped with an error message on the screen. 
+
+The others were tested without any errors detected and produced excution data both for each example according to the usage instruction. 
+
+
+1)
+#Input:emu -trace algo2.obj
+
+
+
+2)
+#Input: emu -trace swapalgo.asm
+
+
+
+3)
+#Input: emu -trace test3.asm
+#Output: Fail to complete. 
+with error messages shown on the screen
+
+PC=00000000, SP=08049596, A=008172D0, B=0804958C Fatal error occurred! No instruction can be found!
